@@ -4,6 +4,9 @@
  */
 package vista;
 
+import controlador.ctrMenu;
+import modelo.Menu;
+
 /**
  *
  * @author Estudiante
@@ -17,6 +20,20 @@ public class frmMenu extends javax.swing.JFrame {
         initComponents();
     }
 
+    public static void initfrMenu(){
+
+        Menu modelo = new Menu();
+        frmMenu vista = new frmMenu();
+        ctrMenu controlador = new ctrMenu(modelo, vista);
+        
+        vista.setVisible(true);
+        
+    }
+    
+    
+    
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -65,8 +82,8 @@ public class frmMenu extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("Taquería los soñadores");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 40, -1, 50));
+        jLabel1.setText("Taquería tacos tosco Bosco");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, -1, 50));
         jLabel1.getAccessibleContext().setAccessibleName("Taquerría soñadores");
 
         txtNombre.setBackground(new java.awt.Color(153, 153, 153));
@@ -78,6 +95,11 @@ public class frmMenu extends javax.swing.JFrame {
         jPanel1.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 130, 350, 50));
 
         txtPrecio.setBackground(new java.awt.Color(153, 153, 153));
+        txtPrecio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPrecioActionPerformed(evt);
+            }
+        });
         jPanel1.add(txtPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 210, 350, 50));
 
         txtIngredientes.setBackground(new java.awt.Color(153, 153, 153));
@@ -166,6 +188,10 @@ public class frmMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNombreActionPerformed
 
+    private void txtPrecioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPrecioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPrecioActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -196,7 +222,7 @@ public class frmMenu extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new frmMenu().setVisible(true);
+                initfrMenu();
             }
         });
     }
